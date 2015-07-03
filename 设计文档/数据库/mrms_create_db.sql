@@ -29,7 +29,7 @@ CREATE TABLE `tb_department` (
   UNIQUE KEY `id_UNIQUE` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE `tb_user_application` (
-  `id` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `password` varchar(32) NOT NULL,
   `gender` tinyint(1) NOT NULL,
@@ -60,21 +60,8 @@ CREATE TABLE `tb_user` (
   KEY `USER_DEPARTMENT_idx` (`department_id`),
   CONSTRAINT `USER_DEPARTMENT` FOREIGN KEY (`department_id`) REFERENCES `tb_department` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-CREATE TABLE `tb_department_user` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `department_id` int(10) unsigned NOT NULL,
-  `user_id` int(10) unsigned NOT NULL,
-  `reserved_word` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
-  KEY `DEPARTMENT_idx` (`department_id`),
-  KEY `DEPARTMENT_idx1` (`department_id`),
-  KEY `USER_ID_idx1` (`user_id`),
-  CONSTRAINT `DEPARTMENT_ID` FOREIGN KEY (`department_id`) REFERENCES `tb_department` (`id`),
-  CONSTRAINT `DEPARTMENT_USER` FOREIGN KEY (`user_id`) REFERENCES `tb_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 CREATE TABLE `tb_admin` (
-  `id` int(10) unsigned NOT NULL,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(10) unsigned NOT NULL,
   `super_admin` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `reserved_word` varchar(255) DEFAULT NULL,

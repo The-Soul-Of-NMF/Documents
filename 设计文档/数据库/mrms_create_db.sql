@@ -118,6 +118,7 @@ CREATE TABLE `tb_meeting` (
   `start_time` time DEFAULT NULL,
   `during_time` int(10) unsigned NOT NULL,
   `total_number` int(10) unsigned NOT NULL,
+  `description` text NOT NULL,
   `state` int(10) unsigned NOT NULL,
   `reserved_word` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`),

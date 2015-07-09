@@ -1,0 +1,8 @@
+﻿1、所有的代码都在meeting_room_management.jsp、meeting_room_management_add.jsp、meeting_room_management_edit.jsp
+   、user/notice。jsp上修改，几个会议通知的跳转都在meeting_room_management.jsp的按钮上，修改、删除、增加、
+   点击左侧“会议室管理”标签，可以看到查看所有会议室的action
+2、ShowNoticeAction.java这个文件需要传session ，吧当前用户的id穿进去，位置有注释
+3、noticeinteraction的hibernate配置文件修改的比较多，与之相关的配置文件都有过修改
+4、会议室状态的两个状态是写的，不是读的
+5、没有使用枚举的状态，使用了一个GetStateByid的文件获取的（今天发现很傻逼但是没改）
+6、noticetype表在图片里，因为已读未读判定是根据这个表的id来的，所以注意id的顺序
